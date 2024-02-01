@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { fetchArticlesByTopic } from "./data";
+import { fetchArticleByTopic } from "./data";
 
 const ListByTopic = () => {
   const { topic } = useParams();
@@ -9,7 +9,7 @@ const ListByTopic = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const articles = await fetchArticlesByTopic(topic);
+        const articles = await fetchArticleByTopic(topic);
         setArticleList(articles);
       } catch (error) {
         console.error("Error fetching articles by topic:", error);

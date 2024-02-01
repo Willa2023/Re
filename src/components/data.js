@@ -15,3 +15,5 @@ async function fetchArticleByTopic(topic) {
     throw new Error("Failed to fetch article.");
   }
 }
+
+module.exports = { fetchArticleByTopic };
