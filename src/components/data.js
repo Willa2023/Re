@@ -1,7 +1,7 @@
 //data.js
 const { sql } = require("@vercel/postgres");
 
-async function fetchArticleByTopic(topic) {
+export async function fetchArticleByTopic(topic) {
   try {
     const data = await sql`
       SELECT *
@@ -15,5 +15,3 @@ async function fetchArticleByTopic(topic) {
     throw new Error("Failed to fetch article.");
   }
 }
-
-module.exports = { fetchArticleByTopic };
