@@ -1,28 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { fetchArticlesByTopic } from "./data";
 
 const ListByTopic = () => {
   const { topic } = useParams();
   const [articleList, setArticleList] = useState([]);
 
   useEffect(() => {
-    const fetchArticlesByTopic = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:5005/listByTopic/${topic}`
-        );
-        console.log(response);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        setArticleList(data);
+        const articles = await fetchArticlesByTopic(topic);
+        setArticleList(articles);
       } catch (error) {
         console.error("Error fetching articles by topic:", error);
       }
     };
-
-    fetchArticlesByTopic();
+    fetchData();
   }, [topic]);
 
   return (
