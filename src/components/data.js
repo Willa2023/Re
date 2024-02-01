@@ -1,7 +1,7 @@
 //data.js
 const { sql } = require("@vercel/postgres");
 
-async function fetchArticlByTopic(topic) {
+async function fetchArticleByTopic(topic) {
   try {
     const data = await sql`
       SELECT *
