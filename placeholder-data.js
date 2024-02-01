@@ -1,13 +1,13 @@
 const accounts = [
   {
     id: "410544b2-4001-4271-9855-fec4b6a6442a",
-    name: "1",
+    username: "1",
     password: "1",
     email: "1@nextmail.com",
   },
   {
     id: "3958dc9e-712f-4377-85e9-fec4b6a6442a",
-    name: "2",
+    username: "2",
     password: "2",
     email: "2@nextmail.com",
   },
